@@ -60,6 +60,14 @@
 	<![endif]-->
 
 	</head>
+
+	<?php
+	function getAge($then) {
+		$then = date('Ymd', strtotime($then));
+		$diff = date('Ymd') - $then;
+		return substr($diff, 0, -4);
+	}
+	?>
 	<body style="background-image: url(images/bg_img.jpg);">
 	
 	<div id="fh5co-main">
@@ -84,7 +92,13 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12 fh5co-counter">
-							<div class="fh5co-number fh5co-left">6</div>
+							<div class="fh5co-number fh5co-left"><?php 
+							$age = '2015-06-01';
+							$nowdate = date('Ymd', strtotime($age));
+							$diff = date('Ymd') - $nowdate;
+							$res = substr($diff, 0, - 4);
+							echo $res;
+							?></div>
 							<div class="fh5co-text">
 								<h3 class="border-bottom">Years of experience</h3>
 								<h3 class="border-bottom">in Web Developer.</h3>
@@ -272,7 +286,7 @@
 				<div class="fh5co-content-inner">
 					<div class="row">
 						<div class="col-md-12" style="text-align: center;">
-							<a href="../index.html"><button class="btn btn-primary">GO TO PORTOFOLIO</button></a>
+							<a href="../index.php"><button class="btn btn-primary">GO TO PORTOFOLIO</button></a>
 						</div>
 					</div>
 				</div>
@@ -304,3 +318,4 @@
 
 	</body>
 </html>
+
